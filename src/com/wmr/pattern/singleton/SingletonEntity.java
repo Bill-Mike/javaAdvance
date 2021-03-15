@@ -34,6 +34,7 @@ public class SingletonEntity {
         }
     }
     */
+
     /* 使用静态内部类的方法最好，既避免了线程安全问题，又避免了同步问题*/
     private static class LazyHolder{
         private static final SingletonEntity singletonEntity = new SingletonEntity();
