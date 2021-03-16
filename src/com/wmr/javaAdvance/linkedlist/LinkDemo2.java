@@ -4,6 +4,7 @@ interface Ilink<E>{
     public void add(E e);
     public E get(int index);
     public int size();
+    public void remove(int index);
 }
 class Linkimpl<E> implements Ilink<E>{
     private int count;
@@ -64,6 +65,20 @@ class Linkimpl<E> implements Ilink<E>{
     @Override
     public int size() {
         return this.count;
+    }
+
+    @Override
+    public void remove(int index) {
+        if(this.count < index || index <0){
+            return;
+        }
+        Node last = null;
+        int i = 0;
+        while (i < this.count){
+            //if(i)
+            i++;
+        }
+        this.count--;
     }
 }
 public class LinkDemo2 {
