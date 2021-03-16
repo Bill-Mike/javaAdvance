@@ -1,5 +1,7 @@
 package com.wmr.pattern.singleton;
 
+import com.wmr.javaAdvance.FuncInterfaceTest;
+
 import java.util.HashMap;
 import java.util.Map;
 

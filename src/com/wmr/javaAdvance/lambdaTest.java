@@ -15,6 +15,10 @@ public class lambdaTest{
 
         IMath result = (p1, p2) -> p1 + p2;
         System.out.println(result.add(10, 20));
+        FuncInterfaceTest test = (p1, p2) -> {
+            return p1 + p2;
+        };
+        System.out.println(test.add(10, 20));
     }
 }
 @FunctionalInterface
