@@ -5,7 +5,7 @@ package com.wmr.pattern.singleton;
  */
 public class SingletonEntity {
     private String name;
-    private static SingletonEntity singletonEntity;
+    private volatile static SingletonEntity singletonEntity;
 
     public void setName(String name) {
         this.name = name;
