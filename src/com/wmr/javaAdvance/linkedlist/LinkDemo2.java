@@ -7,6 +7,7 @@ interface Ilink<E>{
     public void remove(int index);
     public boolean isEmpty();
     public boolean contains(E e);
+    public void clean();
 }
 class Linkimpl<E> implements Ilink<E>{
     private int count;
@@ -109,6 +110,12 @@ class Linkimpl<E> implements Ilink<E>{
         }
         return false;
     }
+
+    @Override
+    public void clean() {
+        this.root = null;
+        this.count = 0;
+    }
 }
 public class LinkDemo2 {
     public static void main(String[] args) {
@@ -118,7 +125,7 @@ public class LinkDemo2 {
         ilink.add("world");
         ilink.add("!");
         System.out.println(ilink.isEmpty());
-        System.out.println(ilink.contains("hello"));
+        System.out.println(ilink.contains("!"));
         System.out.println(ilink.size());
         System.out.println("--------------------");
         for(int i = 1; i <= ilink.size(); i++){

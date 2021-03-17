@@ -1,4 +1,4 @@
 package com.wmr.threadtest.productorandconsumer;
 
-public class ProductorTest {
+public class IConsumer {
 }
