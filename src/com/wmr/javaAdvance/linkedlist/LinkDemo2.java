@@ -5,6 +5,8 @@ interface Ilink<E>{
     public E get(int index);
     public int size();
     public void remove(int index);
+    public boolean isEmpty();
+    public boolean contains(E e);
 }
 class Linkimpl<E> implements Ilink<E>{
     private int count;
@@ -72,26 +74,66 @@ class Linkimpl<E> implements Ilink<E>{
         if(this.count < index || index <0){
             return;
         }
-        Node last = null;
-        int i = 0;
+        Node thisE = this.root;
+        int i = 1;
         while (i < this.count){
-            //if(i)
+            if(i == index){
+                thisE= thisE.next.next;
+
+            }else {
+                thisE = thisE.next;
+                break;
+            }
             i++;
         }
         this.count--;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        if(this.count == 0)
+        return true;
+        return false;
+    }
+
+    @Override
+    public boolean contains(E e) {
+        Node data = this.root;
+        int i = 1;
+        while (i <= this.count){
+            if(data.data.equals(e)){
+                return true;
+            }
+            data = data.next;
+            i++;
+        }
+        return false;
     }
 }
 public class LinkDemo2 {
     public static void main(String[] args) {
         Ilink<String> ilink = new Linkimpl<>();
+        System.out.println(ilink.isEmpty());
         ilink.add("hello");
         ilink.add("world");
         ilink.add("!");
+        System.out.println(ilink.isEmpty());
+        System.out.println(ilink.contains("hello"));
         System.out.println(ilink.size());
+        System.out.println("--------------------");
+        for(int i = 1; i <= ilink.size(); i++){
+            System.out.println(ilink.get(i));
+        }
+        ilink.remove(2);
+        System.out.println("_______________");
+        for(int i = 1; i <= ilink.size(); i++){
+            System.out.println(ilink.get(i));
+        }
         printData(ilink);
+        System.out.println(ilink.get(1));
 
     }
     public static void printData(Ilink ilink){
-        System.out.println(ilink.get(4));
+        System.out.println(ilink.get(2));
     }
 }
