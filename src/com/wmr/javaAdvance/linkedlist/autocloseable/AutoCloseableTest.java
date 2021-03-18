@@ -2,10 +2,12 @@ package com.wmr.javaAdvance.linkedlist.autocloseable;
 
 /**
  * AutoCloseable 必须和try catch中使用
+ * try括号内的资源会在try语句结束后自动释放，前提是这些可关闭的资源必须实现 java.lang.AutoCloseable 接口。
  */
 public class AutoCloseableTest {
     public static void main(String[] args) {
-        try (IMessage msg = new NetMessage("test message content")){
+
+        try(IMessage msg = new NetMessage("test message content")){
             msg.send();
         }catch (Exception e){
             e.printStackTrace();
