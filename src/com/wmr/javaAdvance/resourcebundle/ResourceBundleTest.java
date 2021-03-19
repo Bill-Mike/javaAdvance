@@ -1,5 +1,8 @@
 package com.wmr.javaAdvance.resourcebundle;
 
+import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -10,6 +13,6 @@ public class ResourceBundleTest {
         String value = res.getString("test");
         System.out.println(value);
         value = res.getString("info");
-        System.out.println(value);
+        System.out.println(MessageFormat.format(value,"Bill", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date())));
     }
 }

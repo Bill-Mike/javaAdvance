@@ -1,0 +1,14 @@
+class Chanel{
+    private static Message msg;
+
+    public static void setMsg(Message msg) {
+        Chanel.msg = msg;
+    }
+    public static void send(){
+        System.out.println(Thread.currentThread().getName()+" 消息发送："+msg.getContent());
+    }
+    private Chanel(){}
+}
+
+Chanel 类中的Message是static属性，当多个线程同时操作Chanel的时候会出现多个线程同时操作Message内容会出现相互覆盖的问题，
+在核心功能不变的情况下，需要考虑线程独立的问题
