@@ -1,17 +1,26 @@
-package com.wmr.comparator;
+package com.wmr.javaAdvance.comparator;
 
 import java.util.Arrays;
 
-public class ComparatorTest {
+public class ComparableTest {
     public static void main(String[] args) {
         int[] data = new int[]{3,6,4,77,44,22,88,99,100};
         Arrays.sort(data);
         System.out.println(Arrays.toString(data));
+        Person[] pers = new Person[3];
+        Person p1 = new Person("aa", 1);
+        Person p2 = new Person("bb", 5);
+        Person p3 = new Person("cc", 4);
+        pers[0] = p1;
+        pers[1] = p2;
+        pers[2] = p3;
+        Arrays.sort(pers);
+        System.out.println(Arrays.toString(pers));
     }
 
 }
 
-class Person implements Comparable{
+class Person implements Comparable<Person>{
     private String name;
     private int age;
 
@@ -45,7 +54,7 @@ class Person implements Comparable{
     }
 
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(Person o) {
+        return this.age - o.age;
     }
 }
