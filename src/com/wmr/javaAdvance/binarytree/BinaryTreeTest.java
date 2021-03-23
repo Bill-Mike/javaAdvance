@@ -1,5 +1,7 @@
 package com.wmr.javaAdvance.binarytree;
 
+import com.sun.security.auth.UnixNumericUserPrincipal;
+
 import java.util.Arrays;
 
 public class BinaryTreeTest {
@@ -155,12 +157,20 @@ class BinaryTree<T extends Comparable<T>>{
     public void remove(Comparable<T> data){
         Node removeNode = this.root.getRemoveNode(data);
         if(removeNode != null){
-            if (removeNode.left == null && removeNode.left == null){
+            if (removeNode.left == null && removeNode.left == null){ //没有子节点，父节点断开连接
                 removeNode.parent = null;
-            }else if(removeNode.left != null && removeNode.right == null){
+            }else if(removeNode.left != null && removeNode.right == null){  //没有右节点，左子节点代替原节点
                 removeNode.left.parent = removeNode.parent;
-            }else  if(removeNode.left == null && removeNode.right != null){
+            }else  if(removeNode.left == null && removeNode.right != null){//没有左节点，右子节点代替原节点
                 removeNode.right.parent = removeNode.parent;
+            }else{  //两边都有节点，则将右节点中最左的节点找到改变其指向
+                Node moveNode = removeNode.right;   //移动的节点
+                while(moveNode.left != null){
+                    moveNode = moveNode.left;   //将删除节点的右节点的最左节点付给移动节点
+                }
+                moveNode.parent.left = null;
+                moveNode.parent = removeNode.parent;
+                moveNode.right = removeNode.right;
             }
         }
     }
