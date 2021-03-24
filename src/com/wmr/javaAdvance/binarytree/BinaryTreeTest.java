@@ -13,6 +13,10 @@ public class BinaryTreeTest {
         tree.add(new Person("dd", 3));
         tree.add(new Person("ee", 28));
         tree.add(new Person("ff", 30));
+        tree.add(new Person("gg", 64));
+        tree.add(new Person("kk", 80));
+        tree.add(new Person("ll", 99));
+        tree.remove(new Person("cc", 1));
         System.out.println(Arrays.toString(tree.toArray()));
     }
 }
