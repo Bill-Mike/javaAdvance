@@ -7,3 +7,9 @@
 使用OutputStream字节输出流作为输出是，不进行close()，目标文件中以然可以显示输出结果，
 使用Writer字符输出流作为输出是不进行close(),目标文件中没有输出结果，因为writer使用了缓冲区，使用close()方法将强制执行刷新机制，如果没有使用时close()方法将无法进行输出，如果不适用close（可以使用flush()方法井型强制刷新
 
+
+内存操作流：
+将读取到的流信息存储到内存中
+在Java中有两类内存操作流：
+字节内存操作流：ByteArrayOutputStream, ByteArrayInputStream
+字符内存操作流：CharArrayWriter, CharArrayReader
