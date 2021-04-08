@@ -1,4 +1,4 @@
-package com.wmr.javaAdvance.exercises.service.impl;
+package com.wmr.javaAdvance.exercises.service;
 
 public interface INumberStatService {
     public int[] stat();

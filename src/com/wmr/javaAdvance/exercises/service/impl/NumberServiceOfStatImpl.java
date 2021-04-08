@@ -1,4 +1,5 @@
 package com.wmr.javaAdvance.exercises.service.impl;
+import com.wmr.javaAdvance.exercises.service.INumberStatService;
 import com.wmr.javaAdvance.exercises.utils.InputUtil;
 
 public class NumberServiceOfStatImpl implements INumberStatService {
