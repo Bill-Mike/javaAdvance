@@ -17,7 +17,6 @@ public class InputUtil {
             }else {
                 System.out.println("请输入数字！");
             }
-            input.close();
         }
         return num;
     }
