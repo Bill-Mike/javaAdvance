@@ -34,7 +34,9 @@ public class Candidate implements Comparable<Candidate>{
         this.name = name;
         this.poll = poll;
     }
+    public Candidate(){
 
+    }
     @Override
     public int compareTo(Candidate o) {
         return o.poll - this.poll;

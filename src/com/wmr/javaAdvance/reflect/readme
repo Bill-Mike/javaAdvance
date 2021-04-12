@@ -1,0 +1,4 @@
+反射之中的所有核心操作都是通过Class类对象展开的，可以说Class类是放射操作的根源所在。
+要获取Class类的实例化对象可以采用三钟方式
+1.Object类支持 Object类可以根据实例化对象获取Class对象：
+    public final Class<T> getClass()
