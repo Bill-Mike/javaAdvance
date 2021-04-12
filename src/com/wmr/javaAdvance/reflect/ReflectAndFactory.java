@@ -37,7 +37,7 @@ class HouseService implements IService{
 class Factory{
     private Factory(){}
 
-    public static <T> T getInstance(Class<T> T, String className) throws Exception{
+    public static <T> T getInstance(Class<T> clazz, String className) throws Exception{
         return (T) Class.forName(className).newInstance();
     }
 }
